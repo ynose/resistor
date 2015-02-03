@@ -1,0 +1,56 @@
+
+li {
+    display: inline-block;
+/*    width: 20px;*/
+    text-align: center;
+}
+
+
+
+.ohm_0 {
+    background-color: Black;
+}
+
+.ohm_1 {
+    background-color: Brown;
+}
+
+.ohm_2 {
+    background-color: Red;
+}
+
+.ohm_3 {
+    background-color: Orange;
+}
+
+.ohm_4 {
+    background-color: Yellow;
+}
+
+.ohm_5 {
+    background-color: Green;
+}
+
+.ohm_6 {
+    background-color: Blue;
+}
+
+.ohm_7 {
+    background-color: Purple;
+}
+
+.ohm_8 {
+    background-color: Gray;
+}
+
+.ohm_9 {
+    background-color: White;
+}
+
+.ohm_G {
+    background-color: Gold;
+}
+
+.ohm_S {
+    background-color: Silver;
+}
