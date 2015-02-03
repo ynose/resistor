@@ -32,60 +32,301 @@
 <script type="text/javascript">
     $(document).ready(function(){
       // ここに処理を記述します
+
+        $('#ohmTab a').click(function (e) {
+          e.preventDefault()
+          $(this).tab('show')
+        })
+
     });
 </script>
 
 </head>
 <body>
 
-<div class="container">
+<div class="container-fluid">
 
-<div class="row">
-    <div class="col-md-6">
-    A
-    </div>
-    <div class="col-md-6">
-    B
-    </div>
-</div>
+<div role="tabpanel">
 
-
-<div class="row">
-    <div class="col-md-6">
-
-    <ul>100
-        <li class="ohm_1">1</li>
-        <li class="ohm_0">0</li>
-        <li class="ohm_1">1</li>
-        <li class="ohm_G">G</li>
+    <!-- Nav tabs -->
+    <ul class="nav nav-tabs" role="tablist">
+        <li role="presentation" class="active"><a href="#ohm100" aria-controls="ohm100" role="tab" data-toggle="tab">100 Ω</a></li>
+        <li role="presentation"><a href="#ohm1K" aria-controls="ohm1K" role="tab" data-toggle="tab">1.0K Ω</a></li>
+        <li role="presentation"><a href="#ohm10K" aria-controls="ohm10K" role="tab" data-toggle="tab">10K Ω</a></li>
+        <li role="presentation"><a href="#ohm100K" aria-controls="ohm100K" role="tab" data-toggle="tab">100K Ω</a></li>
     </ul>
 
-    <ul>150
-        <li class="ohm_1">1</li>
-        <li class="ohm_5">5</li>
-        <li class="ohm_1">1</li>
-        <li class="ohm_G">G</li>
-    </ul>
-    
+    <!-- Tab panes -->
+    <div class="tab-content">
+        <!-- 100 Ω -->
+        <div role="tabpanel" class="tab-pane active" id="ohm100">
+            <div class="row">
+                <ul>
+                    <li class="col-xs-2">100 Ω</li>
+                    <li class="ohm_1 col-xs-2">1</li>
+                    <li class="ohm_0 col-xs-2">0</li>
+                    <li class="ohm_1 col-xs-2">1</li>
+                    <li class="ohm_G col-xs-2">G</li>
+                </ul>
+            </div>
+            <div class="row">
+                <ul>
+                    <li class="col-xs-2">150 Ω</li>
+                    <li class="ohm_1 col-xs-2">1</li>
+                    <li class="ohm_5 col-xs-2">5</li>
+                    <li class="ohm_1 col-xs-2">1</li>
+                    <li class="ohm_G col-xs-2">G</li>
+                </ul>
+            </div>
+            <div class="row">
+                <ul>
+                    <li class="col-xs-2">220 Ω</li>
+                    <li class="ohm_2 col-xs-2">2</li>
+                    <li class="ohm_2 col-xs-2">2</li>
+                    <li class="ohm_1 col-xs-2">1</li>
+                    <li class="ohm_G col-xs-2">G</li>
+                </ul>
+            </div>
+            <div class="row">
+                <ul>
+                    <li class="col-xs-2">330 Ω</li>
+                    <li class="ohm_3 col-xs-2">3</li>
+                    <li class="ohm_3 col-xs-2">3</li>
+                    <li class="ohm_1 col-xs-2">1</li>
+                    <li class="ohm_G col-xs-2">G</li>
+                </ul>
+            </div>
+            <div class="row">
+                <ul>
+                    <li class="col-xs-2">470 Ω</li>
+                    <li class="ohm_4 col-xs-2">4</li>
+                    <li class="ohm_7 col-xs-2">7</li>
+                    <li class="ohm_1 col-xs-2">1</li>
+                    <li class="ohm_G col-xs-2">G</li>
+                </ul>
+            </div>
+            <div class="row">
+                <ul>
+                    <li class="col-xs-2">680 Ω</li>
+                    <li class="ohm_6 col-xs-2">6</li>
+                    <li class="ohm_8 col-xs-2">8</li>
+                    <li class="ohm_1 col-xs-2">1</li>
+                    <li class="ohm_G col-xs-2">G</li>
+                </ul>
+            </div>
+            <div class="row">
+                <ul>
+                    <li class="col-xs-2">820 Ω</li>
+                    <li class="ohm_8 col-xs-2">8</li>
+                    <li class="ohm_2 col-xs-2">2</li>
+                    <li class="ohm_1 col-xs-2">1</li>
+                    <li class="ohm_G col-xs-2">G</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- 1.0K -->
+        <div role="tabpanel" class="tab-pane" id="ohm1K">
+            <div class="row">
+                <ul>
+                    <li class="col-xs-2">1.0K Ω</li>
+                    <li class="ohm_1 col-xs-2">1</li>
+                    <li class="ohm_0 col-xs-2">0</li>
+                    <li class="ohm_2 col-xs-2">2</li>
+                    <li class="ohm_G col-xs-2">G</li>
+                </ul>
+            </div>
+            <div class="row">
+                <ul>
+                    <li class="col-xs-2">1.5K Ω</li>
+                    <li class="ohm_1 col-xs-2">1</li>
+                    <li class="ohm_5 col-xs-2">5</li>
+                    <li class="ohm_2 col-xs-2">2</li>
+                    <li class="ohm_G col-xs-2">G</li>
+                </ul>
+            </div>
+            <div class="row">
+                <ul>
+                    <li class="col-xs-2">2.2K Ω</li>
+                    <li class="ohm_2 col-xs-2">2</li>
+                    <li class="ohm_2 col-xs-2">2</li>
+                    <li class="ohm_2 col-xs-2">2</li>
+                    <li class="ohm_G col-xs-2">G</li>
+                </ul>
+            </div>
+            <div class="row">
+                <ul>
+                    <li class="col-xs-2">3.3K Ω</li>
+                    <li class="ohm_3 col-xs-2">3</li>
+                    <li class="ohm_3 col-xs-2">3</li>
+                    <li class="ohm_2 col-xs-2">2</li>
+                    <li class="ohm_G col-xs-2">G</li>
+                </ul>
+            </div>
+            <div class="row">
+                <ul>
+                    <li class="col-xs-2">4.7K Ω</li>
+                    <li class="ohm_4 col-xs-2">4</li>
+                    <li class="ohm_7 col-xs-2">7</li>
+                    <li class="ohm_2 col-xs-2">2</li>
+                    <li class="ohm_G col-xs-2">G</li>
+                </ul>
+            </div>
+            <div class="row">
+                <ul>
+                    <li class="col-xs-2">6.8K Ω</li>
+                    <li class="ohm_6 col-xs-2">6</li>
+                    <li class="ohm_8 col-xs-2">8</li>
+                    <li class="ohm_2 col-xs-2">2</li>
+                    <li class="ohm_G col-xs-2">G</li>
+                </ul>
+            </div>
+            <div class="row">
+                <ul>
+                    <li class="col-xs-2">8.2K Ω</li>
+                    <li class="ohm_8 col-xs-2">8</li>
+                    <li class="ohm_2 col-xs-2">2</li>
+                    <li class="ohm_2 col-xs-2">2</li>
+                    <li class="ohm_G col-xs-2">G</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- 10K -->
+        <div role="tabpanel" class="tab-pane" id="ohm10K">
+            <div class="row">
+                <ul>
+                    <li class="col-xs-2">10K Ω</li>
+                    <li class="ohm_1 col-xs-2">1</li>
+                    <li class="ohm_0 col-xs-2">0</li>
+                    <li class="ohm_3 col-xs-2">3</li>
+                    <li class="ohm_G col-xs-2">G</li>
+                </ul>
+            </div>
+            <div class="row">
+                <ul>
+                    <li class="col-xs-2">15K Ω</li>
+                    <li class="ohm_1 col-xs-2">1</li>
+                    <li class="ohm_5 col-xs-2">5</li>
+                    <li class="ohm_3 col-xs-2">3</li>
+                    <li class="ohm_G col-xs-2">G</li>
+                </ul>
+            </div>
+            <div class="row">
+                <ul>
+                    <li class="col-xs-2">22K Ω</li>
+                    <li class="ohm_2 col-xs-2">2</li>
+                    <li class="ohm_2 col-xs-2">2</li>
+                    <li class="ohm_3 col-xs-2">3</li>
+                    <li class="ohm_G col-xs-2">G</li>
+                </ul>
+            </div>
+            <div class="row">
+                <ul>
+                    <li class="col-xs-2">33K Ω</li>
+                    <li class="ohm_3 col-xs-2">3</li>
+                    <li class="ohm_3 col-xs-2">3</li>
+                    <li class="ohm_3 col-xs-2">3</li>
+                    <li class="ohm_G col-xs-2">G</li>
+                </ul>
+            </div>
+            <div class="row">
+                <ul>
+                    <li class="col-xs-2">47K Ω</li>
+                    <li class="ohm_4 col-xs-2">4</li>
+                    <li class="ohm_7 col-xs-2">7</li>
+                    <li class="ohm_3 col-xs-2">3</li>
+                    <li class="ohm_G col-xs-2">G</li>
+                </ul>
+            </div>
+            <div class="row">
+                <ul>
+                    <li class="col-xs-2">68K Ω</li>
+                    <li class="ohm_6 col-xs-2">6</li>
+                    <li class="ohm_8 col-xs-2">8</li>
+                    <li class="ohm_3 col-xs-2">3</li>
+                    <li class="ohm_G col-xs-2">G</li>
+                </ul>
+            </div>
+            <div class="row">
+                <ul>
+                    <li class="col-xs-2">82K Ω</li>
+                    <li class="ohm_8 col-xs-2">8</li>
+                    <li class="ohm_2 col-xs-2">2</li>
+                    <li class="ohm_3 col-xs-2">3</li>
+                    <li class="ohm_G col-xs-2">G</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- 100K -->
+        <div role="tabpanel" class="tab-pane" id="ohm100K">
+            <div class="row">
+                <ul>
+                    <li class="col-xs-2">100K Ω</li>
+                    <li class="ohm_1 col-xs-2">1</li>
+                    <li class="ohm_0 col-xs-2">0</li>
+                    <li class="ohm_4 col-xs-2">4</li>
+                    <li class="ohm_G col-xs-2">G</li>
+                </ul>
+            </div>
+            <div class="row">
+                <ul>
+                    <li class="col-xs-2">150K Ω</li>
+                    <li class="ohm_1 col-xs-2">1</li>
+                    <li class="ohm_5 col-xs-2">5</li>
+                    <li class="ohm_4 col-xs-2">4</li>
+                    <li class="ohm_G col-xs-2">G</li>
+                </ul>
+            </div>
+            <div class="row">
+                <ul>
+                    <li class="col-xs-2">220K Ω</li>
+                    <li class="ohm_2 col-xs-2">2</li>
+                    <li class="ohm_2 col-xs-2">2</li>
+                    <li class="ohm_4 col-xs-2">4</li>
+                    <li class="ohm_G col-xs-2">G</li>
+                </ul>
+            </div>
+            <div class="row">
+                <ul>
+                    <li class="col-xs-2">330K Ω</li>
+                    <li class="ohm_3 col-xs-2">3</li>
+                    <li class="ohm_3 col-xs-2">3</li>
+                    <li class="ohm_4 col-xs-2">4</li>
+                    <li class="ohm_G col-xs-2">G</li>
+                </ul>
+            </div>
+            <div class="row">
+                <ul>
+                    <li class="col-xs-2">470K Ω</li>
+                    <li class="ohm_4 col-xs-2">4</li>
+                    <li class="ohm_7 col-xs-2">7</li>
+                    <li class="ohm_4 col-xs-2">4</li>
+                    <li class="ohm_G col-xs-2">G</li>
+                </ul>
+            </div>
+            <div class="row">
+                <ul>
+                    <li class="col-xs-2">680K Ω</li>
+                    <li class="ohm_6 col-xs-2">6</li>
+                    <li class="ohm_8 col-xs-2">8</li>
+                    <li class="ohm_4 col-xs-2">4</li>
+                    <li class="ohm_G col-xs-2">G</li>
+                </ul>
+            </div>
+            <div class="row">
+                <ul>
+                    <li class="col-xs-2">820K Ω</li>
+                    <li class="ohm_8 col-xs-2">8</li>
+                    <li class="ohm_2 col-xs-2">2</li>
+                    <li class="ohm_4 col-xs-2">4</li>
+                    <li class="ohm_G col-xs-2">G</li>
+                </ul>
+            </div>
+        </div>
     </div>
 
-    <div class="col-md-6">
-
-    <ul>100
-        <li class="ohm_1">1</li>
-        <li class="ohm_0">0</li>
-        <li class="ohm_1">1</li>
-        <li class="ohm_G">G</li>
-    </ul>
-
-    <ul>150
-        <li class="ohm_1">1</li>
-        <li class="ohm_5">5</li>
-        <li class="ohm_1">1</li>
-        <li class="ohm_G">G</li>
-    </ul>
-    
-    </div>
 </div>
 
 </div>
