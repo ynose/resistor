@@ -1,56 +1,81 @@
 
 li {
     display: inline-block;
-/*    width: 20px;*/
+}
+
+.ohm-outer {
+    position: relative;
+    height: 220px;  /* 20px * (帯10個 + なし1個) */
+    border: dotted 1px Gray;
+}
+
+.ohn-nums {
+    position: absolute;
+    width: 100%;
+    top: 0px;       /* jQueryで変化させる */
+}
+
+.ohm {
+    height: 20px;
     text-align: center;
 }
 
+.selector {
+    position: absolute;
+    width: 100%;
+    top: 100px;
+    border: solid 2px Blue;
+    z-index: 9999;
+}
 
-
-.ohm_0 {
+.ohm.ohm-0 {
     background-color: Black;
 }
 
-.ohm_1 {
+.ohm.ohm-1 {
     background-color: Brown;
 }
 
-.ohm_2 {
+.ohm.ohm-2 {
     background-color: Red;
 }
 
-.ohm_3 {
+.ohm.ohm-3 {
     background-color: Orange;
 }
 
-.ohm_4 {
+.ohm.ohm-4 {
     background-color: Yellow;
 }
 
-.ohm_5 {
+.ohm.ohm-5 {
     background-color: Green;
 }
 
-.ohm_6 {
+.ohm.ohm-6 {
     background-color: Blue;
 }
 
-.ohm_7 {
+.ohm.ohm-7 {
     background-color: Purple;
 }
 
-.ohm_8 {
+.ohm.ohm-8 {
     background-color: Gray;
 }
 
-.ohm_9 {
+.ohm.ohm-9 {
     background-color: White;
 }
 
-.ohm_G {
+.ohm.ohm-G {
     background-color: Gold;
 }
 
-.ohm_S {
+.ohm.ohm-S {
     background-color: Silver;
+}
+
+.ohm.ohm-N {
+    border: dotted 1px Black;
 }
