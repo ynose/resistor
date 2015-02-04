@@ -29,6 +29,12 @@ li {
     z-index: 9999;
 }
 
+.caption {
+    position: absolute;
+    width: 100%;
+    top: 100px;     /* 20px * 5個(帯の縦位置中央) */
+}
+
 .ohm.ohm-0 {
     background-color: Black;
 }
