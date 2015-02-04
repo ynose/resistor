@@ -5,7 +5,8 @@ li {
 
 .ohm-outer {
     position: relative;
-    height: 220px;  /* 20px * (帯10個 + なし1個) */
+    overflow: hidden;
+    height: 320px;  /* selector.top + 20px * (帯10個 + なし1個) */
     border: dotted 1px Gray;
 }
 
@@ -23,7 +24,7 @@ li {
 .selector {
     position: absolute;
     width: 100%;
-    top: 100px;
+    top: 100px;     /* 20px * 5個(帯の縦位置中央) */
     border: solid 2px Blue;
     z-index: 9999;
 }

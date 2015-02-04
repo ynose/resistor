@@ -29,22 +29,7 @@
 
 <link rel="stylesheet" type="text/css" href="./resistor.css" />
 
-<script type="text/javascript">
-    $(document).ready(function(){
-        var OHM_HEIGHT = 20;
-        var OHMS_COUNT = 5;
-        var OHMS_HEIGHT = OHM_HEIGHT * OHMS_COUNT;
-
-        // 帯の色を選択
-        $(".ohn-nums").on("click", "div", function() {
-            $col = $(this).parent();
-            $col.animate({
-                top: OHMS_HEIGHT - (OHM_HEIGHT * $(this).data("ohm-no"))
-            }, "normal", "swing");
-        });
-
-    });
-</script>
+<script type="text/javascript" src="./index.js"></script>
 
 </head>
 <body>
@@ -68,10 +53,11 @@
         <div role="tabpanel" class="tab-pane active" id="immediate">
             <div class="row">
                 <!-- 帯１ -->
-                <div class="col-xs-2">
-                    <div class="ohm-outer">
-                        <div class="ohm selector"></div>
-                        <div id="col-1" class="ohn-nums">
+                <div class="js-ohm-group col-xs-2">
+                    <div class="js-ohm-value ohm">5</div>
+                    <div class="ohm-outer">                 <!-- overflow: hidden; -->
+                        <div class="ohm selector"></div>    <!-- position: absolute; -->
+                        <div class="ohn-nums">
                             <div class="ohm ohm-0" data-ohm-no="0">黒</div>
                             <div class="ohm ohm-1" data-ohm-no="1">茶</div>
                             <div class="ohm ohm-2" data-ohm-no="2">赤</div>
@@ -82,7 +68,7 @@
                             <div class="ohm ohm-7" data-ohm-no="7">紫</div>
                             <div class="ohm ohm-8" data-ohm-no="8">灰</div>
                             <div class="ohm ohm-9" data-ohm-no="9">白</div>
-                            <div class="ohm ohm-N" data-ohm-no="10">なし</div>
+                            <div class="ohm ohm-N">なし</div>
                         </div>
                     </div>
                 </div>
