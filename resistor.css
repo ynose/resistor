@@ -3,20 +3,20 @@ li {
     display: inline-block;
 }
 
-.ohm-outer {
+.color-outer {
     position: relative;
     overflow: hidden;
     height: 320px;  /* selector.top + 20px * (帯10個 + なし1個) */
     border: dotted 1px Gray;
 }
 
-.ohn-nums {
+.colors {
     position: absolute;
     width: 100%;
     top: 0px;       /* jQueryで変化させる */
 }
 
-.ohm {
+.resistor {
     height: 20px;
     text-align: center;
 }
@@ -29,60 +29,60 @@ li {
     z-index: 9999;
 }
 
-.caption {
+#ohm {
     position: absolute;
     width: 100%;
     top: 100px;     /* 20px * 5個(帯の縦位置中央) */
 }
 
-.ohm.ohm-0 {
+.resistor.color-0 {
     background-color: Black;
 }
 
-.ohm.ohm-1 {
+.resistor.color-1 {
     background-color: Brown;
 }
 
-.ohm.ohm-2 {
+.resistor.color-2 {
     background-color: Red;
 }
 
-.ohm.ohm-3 {
+.resistor.color-3 {
     background-color: Orange;
 }
 
-.ohm.ohm-4 {
+.resistor.color-4 {
     background-color: Yellow;
 }
 
-.ohm.ohm-5 {
+.resistor.color-5 {
     background-color: Green;
 }
 
-.ohm.ohm-6 {
+.resistor.color-6 {
     background-color: Blue;
 }
 
-.ohm.ohm-7 {
+.resistor.color-7 {
     background-color: Purple;
 }
 
-.ohm.ohm-8 {
+.resistor.color-8 {
     background-color: Gray;
 }
 
-.ohm.ohm-9 {
+.resistor.color-9 {
     background-color: White;
 }
 
-.ohm.ohm-G {
+.resistor.color-G {
     background-color: Gold;
 }
 
-.ohm.ohm-S {
+.resistor.color-S {
     background-color: Silver;
 }
 
-.ohm.ohm-N {
+.resistor.color-N {
     border: dotted 1px Black;
 }

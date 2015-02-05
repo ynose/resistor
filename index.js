@@ -1,78 +1,96 @@
 $(document).ready(function(){
 
-    // 帯の色を選択
-    $(".ohn-nums").on("click", "div", function() {
-        var ohmTop = $(this).position().top;
+    // 初期表示
+    $('.colors').each(function(e) {
+        // 色帯の値を表示
+        showColorValue($(this).children(".color-5"));
+
+        // 抵抗値を表示
+        var value_1 = $("#color-value-1").text(); // １帯目（１桁目の値）
+        var value_2 = $("#color-value-2").text(); // ２帯目（２桁目の値）
+        var value_3 = $("#color-value-3").text(); // ３帯目（乗数）
+        $("#ohm").text(ohmString(ohm(value_1, value_2, value_3)) + " Ω");
+    });
+
+
+    // 色帯の色のクリックイベント（１～４のすべての帯に対応）
+    $(".colors").on("click", "div", function() {
+        var resiColorTop = $(this).position().top;
         var selectorTop = $(this).parent().siblings(".selector").position().top;
 
-        // 帯をスクロール
+        // 選択した色帯の色をセレクタ位置にスクロール
         $(this).parent().animate({
-            top: selectorTop - ohmTop
+            top: selectorTop - resiColorTop
         }, "normal", "swing");
 
-        // 帯の値を表示
-        var ohmNo = $(this).data("ohm-no");
-        $(this).closest(".js-ohm-group").find(".js-ohm-value").text((ohmNo == undefined ? "" : ohmNo));
+
+        // 色帯の値を表示
+        showColorValue($(this));
+
         
         // 抵抗値を表示
-        var value_1 = $("#ohm-value-1").text();
-        var value_2 = $("#ohm-value-2").text();
-        var value_3 = $("#ohm-value-3").text();
-        var magnification;
-        var ohm;
-        switch (value_3) {
-            case "0":
-              magnification = 1;
-              break;
-            case "1":
-              magnification = 10;
-              break;
-            case "2":
-              magnification = 100;
-              break;
-            case "3":
-              magnification = 1000;
-              break;
-            case "4":
-              magnification = 10000;
-              break;
-            case "5":
-              magnification = 100000;
-              break;
-            case "6":
-              magnification = 1000000;
-              break;
-            case "G":
-              magnification = 0.1;
-              break;
-            case "S":
-              magnification = 0.01;
-              break;
-            default:
-              magnification = 0;
-              break;
-        }
-        ohm = Number(value_1 + value_2) * magnification;
-        
-        switch (magnification) {
-            case 0.1:
-            case 0.01:
-                $(".caption").text(ohm + " Ω");
-                break;
-            case 100:
-            case 1000:
-            case 10000:
-                $(".caption").text((ohm / 1000) + "K Ω");
-                break;
-            case 100000:
-            case 1000000:
-                $(".caption").text((ohm / 1000000) + "M Ω");
-                break;
-            default:
-                $(".caption").text(ohm + " Ω");
-                break;
-        }
-        
+        var value_1 = $("#color-value-1").text(); // １帯目（１桁目の値）
+        var value_2 = $("#color-value-2").text(); // ２帯目（２桁目の値）
+        var value_3 = $("#color-value-3").text(); // ３帯目（乗数）
+        var value_4 = $("#color-value-4").text(); // ４帯目（誤差）
+        $("#ohm").text(ohmString(ohm(value_1, value_2, value_3)) + " Ω");
     });
 
 });
+
+
+// 色帯の値を表示
+var showColorValue = function ($color) {
+    var colorNo = $color.data("color-no");
+    $color.closest(".js-color-group").find(".js-color-value").text((colorNo == undefined ? "" : colorNo));
+};
+
+
+// 抵抗値を算出
+var ohm = function (value_1, value_2, value_3) {
+
+    // ３帯目を乗数に変換
+    var multiplier;
+    switch (value_3) {
+        case "0":
+          multiplier = 1;
+          break;
+        case "1":
+        case "2":
+        case "3":
+        case "4":
+        case "5":
+        case "6":
+        case "7":
+        case "8":
+        case "9":
+          multiplier = Math.pow(10, value_3);
+          break;
+        case "G":
+          multiplier = Math.pow(10, -1);
+          break;
+        case "S":
+          multiplier = Math.exp(10, -2);
+          break;
+        default:
+          multiplier = 0;
+          break;
+    }
+
+    // 抵抗値(Ω) = (１帯目 2帯目) * ３帯目
+    return Number(value_1 + value_2) * multiplier;
+};
+
+// 抵抗値を表示用単位に変換
+var ohmString = function (ohm) {
+
+    // 抵抗値を表示向けの単位に変換
+    var ohmString = ohm;
+    if (ohm >= 1000000) {
+        ohmString = (ohm / 1000000) + "M";
+    }　else if (ohm >= 1000) {
+        ohmString = (ohm / 1000) + "K";
+    }
+
+    return ohmString;
+};

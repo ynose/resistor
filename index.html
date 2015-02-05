@@ -41,10 +41,10 @@
     <!-- Nav tabs -->
     <ul class="nav nav-tabs" role="tablist">
         <li role="presentation" class="active"><a href="#immediate" aria-controls="immediate" role="tab" data-toggle="tab">Immediate</a></li>
-        <li role="presentation"><a href="#ohm100" aria-controls="ohm100" role="tab" data-toggle="tab">100 Ω</a></li>
-        <li role="presentation"><a href="#ohm1K" aria-controls="ohm1K" role="tab" data-toggle="tab">1.0K Ω</a></li>
-        <li role="presentation"><a href="#ohm10K" aria-controls="ohm10K" role="tab" data-toggle="tab">10K Ω</a></li>
-        <li role="presentation"><a href="#ohm100K" aria-controls="ohm100K" role="tab" data-toggle="tab">100K Ω</a></li>
+        <li role="presentation"><a href="#resistor100" aria-controls="resistor100" role="tab" data-toggle="tab">100 Ω</a></li>
+        <li role="presentation"><a href="#resistor1K" aria-controls="resistor1K" role="tab" data-toggle="tab">1.0K Ω</a></li>
+        <li role="presentation"><a href="#resistor10K" aria-controls="resistor10K" role="tab" data-toggle="tab">10K Ω</a></li>
+        <li role="presentation"><a href="#resistor100K" aria-controls="resistor100K" role="tab" data-toggle="tab">100K Ω</a></li>
     </ul>
 
     <!-- Tab panes -->
@@ -52,70 +52,71 @@
         <!-- Immediate -->
         <div role="tabpanel" class="tab-pane active" id="immediate">
             <div class="row">
-                <div class="js-ohm-group col-xs-2">
-                    <div class="js-ohm-value ohm"></div>
-                    <div class="ohm-outer">
-                        <div class="ohm caption">100 Ω</div>
+                <div class="col-xs-2">
+                    <div class="resistor"></div>
+                    <div class="color-outer">
+                        <div id="ohm" class="resistor">100 Ω</div>
                     </div>
                 </div>
-                <!-- 帯１ -->
-                <div class="js-ohm-group col-xs-2">
-                    <div id="ohm-value-1" class="js-ohm-value ohm">5</div>
-                    <div class="ohm-outer">                 <!-- overflow: hidden; -->
-                        <div class="ohm selector"></div>    <!-- position: absolute; -->
-                        <div class="ohn-nums">
-                            <div class="ohm ohm-0" data-ohm-no="0">黒</div>
-                            <div class="ohm ohm-1" data-ohm-no="1">茶</div>
-                            <div class="ohm ohm-2" data-ohm-no="2">赤</div>
-                            <div class="ohm ohm-3" data-ohm-no="3">橙</div>
-                            <div class="ohm ohm-4" data-ohm-no="4">黄</div>
-                            <div class="ohm ohm-5" data-ohm-no="5">緑</div>
-                            <div class="ohm ohm-6" data-ohm-no="6">青</div>
-                            <div class="ohm ohm-7" data-ohm-no="7">紫</div>
-                            <div class="ohm ohm-8" data-ohm-no="8">灰</div>
-                            <div class="ohm ohm-9" data-ohm-no="9">白</div>
-                            <div class="ohm ohm-N">なし</div>
+
+                <!-- 色帯１ -->
+                <div class="col-xs-2 js-color-group">
+                    <div id="color-value-1" class="resistor js-color-value"></div>
+                    <div class="color-outer">                   <!-- overflow: hidden; -->
+                        <div class="resistor selector"></div>   <!-- position: absolute; -->
+                        <div class="colors">
+                            <div class="resistor color-0" data-color-no="0">黒</div>
+                            <div class="resistor color-1" data-color-no="1">茶</div>
+                            <div class="resistor color-2" data-color-no="2">赤</div>
+                            <div class="resistor color-3" data-color-no="3">橙</div>
+                            <div class="resistor color-4" data-color-no="4">黄</div>
+                            <div class="resistor color-5" data-color-no="5">緑</div>
+                            <div class="resistor color-6" data-color-no="6">青</div>
+                            <div class="resistor color-7" data-color-no="7">紫</div>
+                            <div class="resistor color-8" data-color-no="8">灰</div>
+                            <div class="resistor color-9" data-color-no="9">白</div>
+                            <div class="resistor color-N">なし</div>
                         </div>
                     </div>
                 </div>
 
-                <!-- 帯２ -->
-                <div class="js-ohm-group col-xs-2">
-                    <div id="ohm-value-2" class="js-ohm-value ohm">5</div>
-                    <div class="ohm-outer">                 <!-- overflow: hidden; -->
-                        <div class="ohm selector"></div>    <!-- position: absolute; -->
-                        <div class="ohn-nums">
-                            <div class="ohm ohm-0" data-ohm-no="0">黒</div>
-                            <div class="ohm ohm-1" data-ohm-no="1">茶</div>
-                            <div class="ohm ohm-2" data-ohm-no="2">赤</div>
-                            <div class="ohm ohm-3" data-ohm-no="3">橙</div>
-                            <div class="ohm ohm-4" data-ohm-no="4">黄</div>
-                            <div class="ohm ohm-5" data-ohm-no="5">緑</div>
-                            <div class="ohm ohm-6" data-ohm-no="6">青</div>
-                            <div class="ohm ohm-7" data-ohm-no="7">紫</div>
-                            <div class="ohm ohm-8" data-ohm-no="8">灰</div>
-                            <div class="ohm ohm-9" data-ohm-no="9">白</div>
-                            <div class="ohm ohm-N">なし</div>
+                <!-- 色帯２ -->
+                <div class="col-xs-2 js-color-group">
+                    <div id="color-value-2" class="resistor js-color-value"></div>
+                    <div class="color-outer">                   <!-- overflow: hidden; -->
+                        <div class="resistor selector"></div>   <!-- position: absolute; -->
+                        <div class="colors">
+                            <div class="resistor color-0" data-color-no="0">黒</div>
+                            <div class="resistor color-1" data-color-no="1">茶</div>
+                            <div class="resistor color-2" data-color-no="2">赤</div>
+                            <div class="resistor color-3" data-color-no="3">橙</div>
+                            <div class="resistor color-4" data-color-no="4">黄</div>
+                            <div class="resistor color-5" data-color-no="5">緑</div>
+                            <div class="resistor color-6" data-color-no="6">青</div>
+                            <div class="resistor color-7" data-color-no="7">紫</div>
+                            <div class="resistor color-8" data-color-no="8">灰</div>
+                            <div class="resistor color-9" data-color-no="9">白</div>
+                            <div class="resistor color-N">なし</div>
                         </div>
                     </div>
                 </div>
 
-                <!-- 帯３ -->
-                <div class="js-ohm-group col-xs-2">
-                    <div id="ohm-value-3" class="js-ohm-value ohm">5</div>
-                    <div class="ohm-outer">                 <!-- overflow: hidden; -->
-                        <div class="ohm selector"></div>    <!-- position: absolute; -->
-                        <div class="ohn-nums">
-                            <div class="ohm ohm-0" data-ohm-no="0">黒</div>
-                            <div class="ohm ohm-1" data-ohm-no="1">茶</div>
-                            <div class="ohm ohm-2" data-ohm-no="2">赤</div>
-                            <div class="ohm ohm-3" data-ohm-no="3">橙</div>
-                            <div class="ohm ohm-4" data-ohm-no="4">黄</div>
-                            <div class="ohm ohm-5" data-ohm-no="5">緑</div>
-                            <div class="ohm ohm-6" data-ohm-no="6">青</div>
-                            <div class="ohm ohm-G" data-ohm-no="G">金</div>
-                            <div class="ohm ohm-S" data-ohm-no="S">銀</div>
-                            <div class="ohm ohm-N">なし</div>
+                <!-- 色帯３ -->
+                <div class="col-xs-2 js-color-group">
+                    <div id="color-value-3" class="resistor js-color-value"></div>
+                    <div class="color-outer">                   <!-- overflow: hidden; -->
+                        <div class="resistor selector"></div>   <!-- position: absolute; -->
+                        <div class="colors">
+                            <div class="resistor color-0" data-color-no="0">黒</div>
+                            <div class="resistor color-1" data-color-no="1">茶</div>
+                            <div class="resistor color-2" data-color-no="2">赤</div>
+                            <div class="resistor color-3" data-color-no="3">橙</div>
+                            <div class="resistor color-4" data-color-no="4">黄</div>
+                            <div class="resistor color-5" data-color-no="5">緑</div>
+                            <div class="resistor color-6" data-color-no="6">青</div>
+                            <div class="resistor color-G" data-color-no="G">金</div>
+                            <div class="resistor color-S" data-color-no="S">銀</div>
+                            <div class="resistor color-N">なし</div>
                         </div>
                     </div>
                 </div>
@@ -124,269 +125,269 @@
         </div>
 
         <!-- 100 Ω -->
-        <div role="tabpanel" class="tab-pane" id="ohm100">
+        <div role="tabpanel" class="tab-pane" id="resistor100">
             <div class="row">
                 <ul>
                     <li class="col-xs-2">100 Ω</li>
-                    <li class="ohm ohm-1 col-xs-2">1</li>
-                    <li class="ohm ohm-0 col-xs-2">0</li>
-                    <li class="ohm ohm-1 col-xs-2">1</li>
-                    <li class="ohm ohm-G col-xs-2">G</li>
+                    <li class="resistor color-1 col-xs-2">1</li>
+                    <li class="resistor color-0 col-xs-2">0</li>
+                    <li class="resistor color-1 col-xs-2">1</li>
+                    <li class="resistor color-G col-xs-2">G</li>
                 </ul>
             </div>
             <div class="row">
                 <ul>
                     <li class="col-xs-2">150 Ω</li>
-                    <li class="ohm ohm-1 col-xs-2">1</li>
-                    <li class="ohm ohm-5 col-xs-2">5</li>
-                    <li class="ohm ohm-1 col-xs-2">1</li>
-                    <li class="ohm ohm-G col-xs-2">G</li>
+                    <li class="resistor color-1 col-xs-2">1</li>
+                    <li class="resistor color-5 col-xs-2">5</li>
+                    <li class="resistor color-1 col-xs-2">1</li>
+                    <li class="resistor color-G col-xs-2">G</li>
                 </ul>
             </div>
             <div class="row">
                 <ul>
                     <li class="col-xs-2">220 Ω</li>
-                    <li class="ohm ohm-2 col-xs-2">2</li>
-                    <li class="ohm ohm-2 col-xs-2">2</li>
-                    <li class="ohm ohm-1 col-xs-2">1</li>
-                    <li class="ohm ohm-G col-xs-2">G</li>
+                    <li class="resistor color-2 col-xs-2">2</li>
+                    <li class="resistor color-2 col-xs-2">2</li>
+                    <li class="resistor color-1 col-xs-2">1</li>
+                    <li class="resistor color-G col-xs-2">G</li>
                 </ul>
             </div>
             <div class="row">
                 <ul>
                     <li class="col-xs-2">330 Ω</li>
-                    <li class="ohm ohm-3 col-xs-2">3</li>
-                    <li class="ohm ohm-3 col-xs-2">3</li>
-                    <li class="ohm ohm-1 col-xs-2">1</li>
-                    <li class="ohm ohm-G col-xs-2">G</li>
+                    <li class="resistor color-3 col-xs-2">3</li>
+                    <li class="resistor color-3 col-xs-2">3</li>
+                    <li class="resistor color-1 col-xs-2">1</li>
+                    <li class="resistor color-G col-xs-2">G</li>
                 </ul>
             </div>
             <div class="row">
                 <ul>
                     <li class="col-xs-2">470 Ω</li>
-                    <li class="ohm ohm-4 col-xs-2">4</li>
-                    <li class="ohm ohm-7 col-xs-2">7</li>
-                    <li class="ohm ohm-1 col-xs-2">1</li>
-                    <li class="ohm ohm-G col-xs-2">G</li>
+                    <li class="resistor color-4 col-xs-2">4</li>
+                    <li class="resistor color-7 col-xs-2">7</li>
+                    <li class="resistor color-1 col-xs-2">1</li>
+                    <li class="resistor color-G col-xs-2">G</li>
                 </ul>
             </div>
             <div class="row">
                 <ul>
                     <li class="col-xs-2">680 Ω</li>
-                    <li class="ohm ohm-6 col-xs-2">6</li>
-                    <li class="ohm ohm-8 col-xs-2">8</li>
-                    <li class="ohm ohm-1 col-xs-2">1</li>
-                    <li class="ohm ohm-G col-xs-2">G</li>
+                    <li class="resistor color-6 col-xs-2">6</li>
+                    <li class="resistor color-8 col-xs-2">8</li>
+                    <li class="resistor color-1 col-xs-2">1</li>
+                    <li class="resistor color-G col-xs-2">G</li>
                 </ul>
             </div>
             <div class="row">
                 <ul>
                     <li class="col-xs-2">820 Ω</li>
-                    <li class="ohm ohm-8 col-xs-2">8</li>
-                    <li class="ohm ohm-2 col-xs-2">2</li>
-                    <li class="ohm ohm-1 col-xs-2">1</li>
-                    <li class="ohm ohm-G col-xs-2">G</li>
+                    <li class="resistor color-8 col-xs-2">8</li>
+                    <li class="resistor color-2 col-xs-2">2</li>
+                    <li class="resistor color-1 col-xs-2">1</li>
+                    <li class="resistor color-G col-xs-2">G</li>
                 </ul>
             </div>
         </div>
 
         <!-- 1.0K -->
-        <div role="tabpanel" class="tab-pane" id="ohm1K">
+        <div role="tabpanel" class="tab-pane" id="resistor1K">
             <div class="row">
                 <ul>
                     <li class="col-xs-2">1.0K Ω</li>
-                    <li class="ohm ohm-1 col-xs-2">1</li>
-                    <li class="ohm ohm-0 col-xs-2">0</li>
-                    <li class="ohm ohm-2 col-xs-2">2</li>
-                    <li class="ohm ohm-G col-xs-2">G</li>
+                    <li class="resistor color-1 col-xs-2">1</li>
+                    <li class="resistor color-0 col-xs-2">0</li>
+                    <li class="resistor color-2 col-xs-2">2</li>
+                    <li class="resistor color-G col-xs-2">G</li>
                 </ul>
             </div>
             <div class="row">
                 <ul>
                     <li class="col-xs-2">1.5K Ω</li>
-                    <li class="ohm ohm-1 col-xs-2">1</li>
-                    <li class="ohm ohm-5 col-xs-2">5</li>
-                    <li class="ohm ohm-2 col-xs-2">2</li>
-                    <li class="ohm ohm-G col-xs-2">G</li>
+                    <li class="resistor color-1 col-xs-2">1</li>
+                    <li class="resistor color-5 col-xs-2">5</li>
+                    <li class="resistor color-2 col-xs-2">2</li>
+                    <li class="resistor color-G col-xs-2">G</li>
                 </ul>
             </div>
             <div class="row">
                 <ul>
                     <li class="col-xs-2">2.2K Ω</li>
-                    <li class="ohm ohm-2 col-xs-2">2</li>
-                    <li class="ohm ohm-2 col-xs-2">2</li>
-                    <li class="ohm ohm-2 col-xs-2">2</li>
-                    <li class="ohm ohm-G col-xs-2">G</li>
+                    <li class="resistor color-2 col-xs-2">2</li>
+                    <li class="resistor color-2 col-xs-2">2</li>
+                    <li class="resistor color-2 col-xs-2">2</li>
+                    <li class="resistor color-G col-xs-2">G</li>
                 </ul>
             </div>
             <div class="row">
                 <ul>
                     <li class="col-xs-2">3.3K Ω</li>
-                    <li class="ohm ohm-3 col-xs-2">3</li>
-                    <li class="ohm ohm-3 col-xs-2">3</li>
-                    <li class="ohm ohm-2 col-xs-2">2</li>
-                    <li class="ohm ohm-G col-xs-2">G</li>
+                    <li class="resistor color-3 col-xs-2">3</li>
+                    <li class="resistor color-3 col-xs-2">3</li>
+                    <li class="resistor color-2 col-xs-2">2</li>
+                    <li class="resistor color-G col-xs-2">G</li>
                 </ul>
             </div>
             <div class="row">
                 <ul>
                     <li class="col-xs-2">4.7K Ω</li>
-                    <li class="ohm ohm-4 col-xs-2">4</li>
-                    <li class="ohm ohm-7 col-xs-2">7</li>
-                    <li class="ohm ohm-2 col-xs-2">2</li>
-                    <li class="ohm ohm-G col-xs-2">G</li>
+                    <li class="resistor color-4 col-xs-2">4</li>
+                    <li class="resistor color-7 col-xs-2">7</li>
+                    <li class="resistor color-2 col-xs-2">2</li>
+                    <li class="resistor color-G col-xs-2">G</li>
                 </ul>
             </div>
             <div class="row">
                 <ul>
                     <li class="col-xs-2">6.8K Ω</li>
-                    <li class="ohm ohm-6 col-xs-2">6</li>
-                    <li class="ohm ohm-8 col-xs-2">8</li>
-                    <li class="ohm ohm-2 col-xs-2">2</li>
-                    <li class="ohm ohm-G col-xs-2">G</li>
+                    <li class="resistor color-6 col-xs-2">6</li>
+                    <li class="resistor color-8 col-xs-2">8</li>
+                    <li class="resistor color-2 col-xs-2">2</li>
+                    <li class="resistor color-G col-xs-2">G</li>
                 </ul>
             </div>
             <div class="row">
                 <ul>
                     <li class="col-xs-2">8.2K Ω</li>
-                    <li class="ohm ohm-8 col-xs-2">8</li>
-                    <li class="ohm ohm-2 col-xs-2">2</li>
-                    <li class="ohm ohm-2 col-xs-2">2</li>
-                    <li class="ohm ohm-G col-xs-2">G</li>
+                    <li class="resistor color-8 col-xs-2">8</li>
+                    <li class="resistor color-2 col-xs-2">2</li>
+                    <li class="resistor color-2 col-xs-2">2</li>
+                    <li class="resistor color-G col-xs-2">G</li>
                 </ul>
             </div>
         </div>
 
         <!-- 10K -->
-        <div role="tabpanel" class="tab-pane" id="ohm10K">
+        <div role="tabpanel" class="tab-pane" id="resistor10K">
             <div class="row">
                 <ul>
                     <li class="col-xs-2">10K Ω</li>
-                    <li class="ohm ohm-1 col-xs-2">1</li>
-                    <li class="ohm ohm-0 col-xs-2">0</li>
-                    <li class="ohm ohm-3 col-xs-2">3</li>
-                    <li class="ohm ohm-G col-xs-2">G</li>
+                    <li class="resistor color-1 col-xs-2">1</li>
+                    <li class="resistor color-0 col-xs-2">0</li>
+                    <li class="resistor color-3 col-xs-2">3</li>
+                    <li class="resistor color-G col-xs-2">G</li>
                 </ul>
             </div>
             <div class="row">
                 <ul>
                     <li class="col-xs-2">15K Ω</li>
-                    <li class="ohm ohm-1 col-xs-2">1</li>
-                    <li class="ohm ohm-5 col-xs-2">5</li>
-                    <li class="ohm ohm-3 col-xs-2">3</li>
-                    <li class="ohm ohm-G col-xs-2">G</li>
+                    <li class="resistor color-1 col-xs-2">1</li>
+                    <li class="resistor color-5 col-xs-2">5</li>
+                    <li class="resistor color-3 col-xs-2">3</li>
+                    <li class="resistor color-G col-xs-2">G</li>
                 </ul>
             </div>
             <div class="row">
                 <ul>
                     <li class="col-xs-2">22K Ω</li>
-                    <li class="ohm ohm-2 col-xs-2">2</li>
-                    <li class="ohm ohm-2 col-xs-2">2</li>
-                    <li class="ohm ohm-3 col-xs-2">3</li>
-                    <li class="ohm ohm-G col-xs-2">G</li>
+                    <li class="resistor color-2 col-xs-2">2</li>
+                    <li class="resistor color-2 col-xs-2">2</li>
+                    <li class="resistor color-3 col-xs-2">3</li>
+                    <li class="resistor color-G col-xs-2">G</li>
                 </ul>
             </div>
             <div class="row">
                 <ul>
                     <li class="col-xs-2">33K Ω</li>
-                    <li class="ohm ohm-3 col-xs-2">3</li>
-                    <li class="ohm ohm-3 col-xs-2">3</li>
-                    <li class="ohm ohm-3 col-xs-2">3</li>
-                    <li class="ohm ohm-G col-xs-2">G</li>
+                    <li class="resistor color-3 col-xs-2">3</li>
+                    <li class="resistor color-3 col-xs-2">3</li>
+                    <li class="resistor color-3 col-xs-2">3</li>
+                    <li class="resistor color-G col-xs-2">G</li>
                 </ul>
             </div>
             <div class="row">
                 <ul>
                     <li class="col-xs-2">47K Ω</li>
-                    <li class="ohm ohm-4 col-xs-2">4</li>
-                    <li class="ohm ohm-7 col-xs-2">7</li>
-                    <li class="ohm ohm-3 col-xs-2">3</li>
-                    <li class="ohm ohm-G col-xs-2">G</li>
+                    <li class="resistor color-4 col-xs-2">4</li>
+                    <li class="resistor color-7 col-xs-2">7</li>
+                    <li class="resistor color-3 col-xs-2">3</li>
+                    <li class="resistor color-G col-xs-2">G</li>
                 </ul>
             </div>
             <div class="row">
                 <ul>
                     <li class="col-xs-2">68K Ω</li>
-                    <li class="ohm ohm-6 col-xs-2">6</li>
-                    <li class="ohm ohm-8 col-xs-2">8</li>
-                    <li class="ohm ohm-3 col-xs-2">3</li>
-                    <li class="ohm ohm-G col-xs-2">G</li>
+                    <li class="resistor color-6 col-xs-2">6</li>
+                    <li class="resistor color-8 col-xs-2">8</li>
+                    <li class="resistor color-3 col-xs-2">3</li>
+                    <li class="resistor color-G col-xs-2">G</li>
                 </ul>
             </div>
             <div class="row">
                 <ul>
                     <li class="col-xs-2">82K Ω</li>
-                    <li class="ohm ohm-8 col-xs-2">8</li>
-                    <li class="ohm ohm-2 col-xs-2">2</li>
-                    <li class="ohm ohm-3 col-xs-2">3</li>
-                    <li class="ohm ohm-G col-xs-2">G</li>
+                    <li class="resistor color-8 col-xs-2">8</li>
+                    <li class="resistor color-2 col-xs-2">2</li>
+                    <li class="resistor color-3 col-xs-2">3</li>
+                    <li class="resistor color-G col-xs-2">G</li>
                 </ul>
             </div>
         </div>
 
         <!-- 100K -->
-        <div role="tabpanel" class="tab-pane" id="ohm100K">
+        <div role="tabpanel" class="tab-pane" id="resistor100K">
             <div class="row">
                 <ul>
                     <li class="col-xs-2">100K Ω</li>
-                    <li class="ohm ohm-1 col-xs-2">1</li>
-                    <li class="ohm ohm-0 col-xs-2">0</li>
-                    <li class="ohm ohm-4 col-xs-2">4</li>
-                    <li class="ohm ohm-G col-xs-2">G</li>
+                    <li class="resistor color-1 col-xs-2">1</li>
+                    <li class="resistor color-0 col-xs-2">0</li>
+                    <li class="resistor color-4 col-xs-2">4</li>
+                    <li class="resistor color-G col-xs-2">G</li>
                 </ul>
             </div>
             <div class="row">
                 <ul>
                     <li class="col-xs-2">150K Ω</li>
-                    <li class="ohm ohm-1 col-xs-2">1</li>
-                    <li class="ohm ohm-5 col-xs-2">5</li>
-                    <li class="ohm ohm-4 col-xs-2">4</li>
-                    <li class="ohm ohm-G col-xs-2">G</li>
+                    <li class="resistor color-1 col-xs-2">1</li>
+                    <li class="resistor color-5 col-xs-2">5</li>
+                    <li class="resistor color-4 col-xs-2">4</li>
+                    <li class="resistor color-G col-xs-2">G</li>
                 </ul>
             </div>
             <div class="row">
                 <ul>
                     <li class="col-xs-2">220K Ω</li>
-                    <li class="ohm ohm-2 col-xs-2">2</li>
-                    <li class="ohm ohm-2 col-xs-2">2</li>
-                    <li class="ohm ohm-4 col-xs-2">4</li>
-                    <li class="ohm ohm-G col-xs-2">G</li>
+                    <li class="resistor color-2 col-xs-2">2</li>
+                    <li class="resistor color-2 col-xs-2">2</li>
+                    <li class="resistor color-4 col-xs-2">4</li>
+                    <li class="resistor color-G col-xs-2">G</li>
                 </ul>
             </div>
             <div class="row">
                 <ul>
                     <li class="col-xs-2">330K Ω</li>
-                    <li class="ohm ohm-3 col-xs-2">3</li>
-                    <li class="ohm ohm-3 col-xs-2">3</li>
-                    <li class="ohm ohm-4 col-xs-2">4</li>
-                    <li class="ohm ohm-G col-xs-2">G</li>
+                    <li class="resistor color-3 col-xs-2">3</li>
+                    <li class="resistor color-3 col-xs-2">3</li>
+                    <li class="resistor color-4 col-xs-2">4</li>
+                    <li class="resistor color-G col-xs-2">G</li>
                 </ul>
             </div>
             <div class="row">
                 <ul>
                     <li class="col-xs-2">470K Ω</li>
-                    <li class="ohm ohm-4 col-xs-2">4</li>
-                    <li class="ohm ohm-7 col-xs-2">7</li>
-                    <li class="ohm ohm-4 col-xs-2">4</li>
-                    <li class="ohm ohm-G col-xs-2">G</li>
+                    <li class="resistor color-4 col-xs-2">4</li>
+                    <li class="resistor color-7 col-xs-2">7</li>
+                    <li class="resistor color-4 col-xs-2">4</li>
+                    <li class="resistor color-G col-xs-2">G</li>
                 </ul>
             </div>
             <div class="row">
                 <ul>
                     <li class="col-xs-2">680K Ω</li>
-                    <li class="ohm ohm-6 col-xs-2">6</li>
-                    <li class="ohm ohm-8 col-xs-2">8</li>
-                    <li class="ohm ohm-4 col-xs-2">4</li>
-                    <li class="ohm ohm-G col-xs-2">G</li>
+                    <li class="resistor color-6 col-xs-2">6</li>
+                    <li class="resistor color-8 col-xs-2">8</li>
+                    <li class="resistor color-4 col-xs-2">4</li>
+                    <li class="resistor color-G col-xs-2">G</li>
                 </ul>
             </div>
             <div class="row">
                 <ul>
                     <li class="col-xs-2">820K Ω</li>
-                    <li class="ohm ohm-8 col-xs-2">8</li>
-                    <li class="ohm ohm-2 col-xs-2">2</li>
-                    <li class="ohm ohm-4 col-xs-2">4</li>
-                    <li class="ohm ohm-G col-xs-2">G</li>
+                    <li class="resistor color-8 col-xs-2">8</li>
+                    <li class="resistor color-2 col-xs-2">2</li>
+                    <li class="resistor color-4 col-xs-2">4</li>
+                    <li class="resistor color-G col-xs-2">G</li>
                 </ul>
             </div>
         </div>
