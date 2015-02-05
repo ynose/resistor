@@ -9,7 +9,9 @@ $(document).ready(function(){
         var value_1 = $("#color-value-1").text(); // １帯目（１桁目の値）
         var value_2 = $("#color-value-2").text(); // ２帯目（２桁目の値）
         var value_3 = $("#color-value-3").text(); // ３帯目（乗数）
-        $("#ohm").text(ohmString(ohm(value_1, value_2, value_3)) + " Ω");
+        var value_4 = $("#color-value-4").text(); // ４帯目（誤差）
+        $("#ohm").html(ohmString(ohm(value_1, value_2, value_3)) + " Ω" + "<br>" + 
+                       ohmErrorString(ohmError(value_4)));
     });
 
 
@@ -33,7 +35,8 @@ $(document).ready(function(){
         var value_2 = $("#color-value-2").text(); // ２帯目（２桁目の値）
         var value_3 = $("#color-value-3").text(); // ３帯目（乗数）
         var value_4 = $("#color-value-4").text(); // ４帯目（誤差）
-        $("#ohm").text(ohmString(ohm(value_1, value_2, value_3)) + " Ω");
+        $("#ohm").html(ohmString(ohm(value_1, value_2, value_3)) + " Ω" + "<br>" + 
+                       ohmErrorString(ohmError(value_4)));
     });
 
 });
@@ -84,7 +87,6 @@ var ohm = function (value_1, value_2, value_3) {
 // 抵抗値を表示用単位に変換
 var ohmString = function (ohm) {
 
-    // 抵抗値を表示向けの単位に変換
     var ohmString = ohm;
     if (ohm >= 1000000) {
         ohmString = (ohm / 1000000) + "M";
@@ -93,4 +95,53 @@ var ohmString = function (ohm) {
     }
 
     return ohmString;
+};
+
+
+// 抵抗値誤差を算出
+var ohmError = function (value_4) {
+  var ohmError;
+
+  switch (value_4) {
+      case "1":
+        ohmError = 1;
+        break;
+      case "2":
+        ohmError = 2;
+        break;
+      case "3":
+        ohmError = 0.05;
+        break;
+      case "5":
+        ohmError = 0.5;
+        break;
+      case "6":
+        ohmError = 0.25;
+        break;
+      case "7":
+        ohmError = 0.1;
+        break;
+      case "G":
+        ohmError = 5;
+        break;
+      case "S":
+        ohmError = 10;
+        break;
+      case "N":
+        ohmError = 20;
+        break;
+      default:
+        ohmError = 0;
+        break;
+      }
+
+    return ohmError / 100;
+};
+
+// 抵抗値誤差を表示用単位に変換
+var ohmErrorString = function (ohmError) {
+
+    var ohmErrorString = "±" + (ohmError * 100) + "%"
+
+    return ohmErrorString;
 };
