@@ -43,7 +43,7 @@ $(document).ready(function(){
     $("#convert").on("click", function() {
 
         var ohmInput = $("#js-ohm-input").val();
-        var unitInput = $("#js-unit-select > option[value='" + $("#js-unit-select").val() + "'").text();
+        var unitInput = $("#js-unit-select > option[value='" + $("#js-unit-select").val() + "']").text();
         var errorInput = $("#js-error-select").val();
 
         var colorNo_1 = convColorNo_1(ohmInput, unitInput);
@@ -58,7 +58,7 @@ $(document).ready(function(){
     });
 
     // 初期表示
-    showResistor(5, 5, 5, 7);
+    showResistor(3, 3, 1, "G"); // 330Ω ±5%
 });
 
 
