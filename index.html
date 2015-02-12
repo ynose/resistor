@@ -52,38 +52,34 @@
         <!-- Immediate -->
         <div role="tabpanel" class="tab-pane active" id="immediate">
             <div class="row">
-                <div class="col-xs-2">
-                    <div class="resistor"></div>
-                    <div class="color-outer">
-                        <div class="colors">
-                            <!-- 抵抗値を表示 -->
-                            <div id="ohm" class="resistor"></div>
-                            <!-- 抵抗値を入力 -->
-                            <input id="js-ohm-input" size="4"></input>
-                            <select id="js-unit-select">
-                                <option value="0">Ω</option>
-                                <option value="1">KΩ</option>
-                                <option value="2">MΩ</option>
-                            </select>
-                            <!-- 誤差を入力 -->
-                            <select id="js-error-select">
-                                <option value="1">±1%</option>
-                                <option value="2">±2%</option>
-                                <option value="3">±0.05%</option>
-                                <option value="5">±0.5%</option>
-                                <option value="6">±0.25%</option>
-                                <option value="7">±0.1%</option>
-                                <option value="G">±5%</option>
-                                <option value="S">±10%</option>
-                                <option value="N">±20%</option>
-                            </select>
-                            <button id="convert">OK</button>
-                        </div>
-                    </div>
+                <div class="col-xs-12">
+                    <!-- 抵抗値を入力 -->
+                    <input id="js-ohm-input" size="4"></input>
+                    <select id="js-unit-select">
+                        <option value="0">Ω</option>
+                        <option value="1">KΩ</option>
+                        <option value="2">MΩ</option>
+                    </select>
+                    <!-- 誤差を入力 -->
+                    <select id="js-error-select">
+                        <option value="1">±1%</option>
+                        <option value="2">±2%</option>
+                        <option value="3">±0.05%</option>
+                        <option value="5">±0.5%</option>
+                        <option value="6">±0.25%</option>
+                        <option value="7">±0.1%</option>
+                        <option value="G">±5%</option>
+                        <option value="S">±10%</option>
+                        <option value="N">±20%</option>
+                    </select>
+                    <button id="convert">OK</button>
+                    <!-- 抵抗値を表示 -->
+                    <span id="ohm"></span>
                 </div>
-
+            </div>
+            <div class="row">
                 <!-- 色帯１ -->
-                <div class="col-xs-2 js-color-group">
+                <div class="col-xs-3 js-color-group">
                     <div id="js-color-no-1" class="resistor js-color-no"></div>
                     <div class="color-outer">                   <!-- overflow: hidden; -->
                         <div class="resistor selector"></div>   <!-- position: absolute; -->
@@ -104,7 +100,7 @@
                 </div>
 
                 <!-- 色帯２ -->
-                <div class="col-xs-2 js-color-group">
+                <div class="col-xs-3 js-color-group">
                     <div id="js-color-no-2" class="resistor js-color-no"></div>
                     <div class="color-outer">                   <!-- overflow: hidden; -->
                         <div class="resistor selector"></div>   <!-- position: absolute; -->
@@ -125,7 +121,7 @@
                 </div>
 
                 <!-- 色帯３ 乗数 -->
-                <div class="col-xs-2 js-color-group">
+                <div class="col-xs-3 js-color-group">
                     <div id="js-color-no-3" class="resistor js-color-no"></div>
                     <div class="color-outer">                   <!-- overflow: hidden; -->
                         <div class="resistor selector"></div>   <!-- position: absolute; -->
@@ -145,7 +141,7 @@
                 </div>
 
                 <!-- 色帯４　誤差 -->
-                <div class="col-xs-2 js-color-group">
+                <div class="col-xs-3 js-color-group">
                     <div id="js-color-no-4" class="resistor js-color-no"></div>
                     <div class="color-outer">                   <!-- overflow: hidden; -->
                         <div class="resistor selector"></div>   <!-- position: absolute; -->

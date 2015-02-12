@@ -23,53 +23,51 @@ $(document).ready(function(){
         var colorNo_3 = $("#js-color-no-3").text(); // ３帯目（乗数）
         var colorNo_4 = $("#js-color-no-4").text(); // ４帯目（誤差）
         var ohmStr = ohmString(convOhm(colorNo_1, colorNo_2, colorNo_3));
-        // var errStr = ohmErrorString($(".colors:eq(4) > .color-" + colorNo_4).data("error-pct") / 100);
-        var errStr = "±" + $(".colors:eq(4) > .color-" + colorNo_4).data("error-pct") + "%";
-            var ohmErrorString = "±" + (ohmError * 100) + "%"
+        // var errStr = ohmErrorString($(".colors:eq(3) > .color-" + colorNo_4).data("error-pct") / 100);
+        var errStr = "±" + $(".colors:eq(3) > .color-" + colorNo_4).data("error-pct") + "%";
+        var ohmErrorString = "±" + (ohmError * 100) + "%"
 
-        $("#ohm").html(ohmStr + " Ω" + "<br>" + errStr);
-
-        // $("#js-ohm-input").val(ohmStr.replace("K","").replace("M",""));
-        // if (ohmStr.indexOf("K") > -1) {
-        //     $("#js-unit-select").val(1);
-        // } else if (ohmStr.indexOf("M") > -1) {
-        //     $("#js-unit-select").val(2);
-        // } else {
-        //     $("#js-unit-select").val(0);
-        // }
+        $("#ohm").text(ohmStr + " Ω" + " " + errStr);
     });
 
-    // 数値から色帯を表示する
-    $("#convert").on("click", function() {
 
-        var ohmInput = $("#js-ohm-input").val();
-        var unitInput = $("#js-unit-select > option[value='" + $("#js-unit-select").val() + "'").text();
-        var errorInput = $("#js-error-select").val();
-
-        var colorNo_1 = convColorNo_1(ohmInput, unitInput);
-        var colorNo_2 = convColorNo_2(ohmInput, unitInput);
-        var colorNo_3 = convColorNo_3(ohmInput, unitInput);
-        var colorNo_4 = errorInput;
-
-        console.log(colorNo_1 + ":" + colorNo_2 + ":" + colorNo_3 + ":" + colorNo_4);
-
-        // 抵抗の色帯を表示
-        showResistor(colorNo_1, colorNo_2, colorNo_3, colorNo_4);
+    // 抵抗値の入力イベント（対応する色帯を表示する）
+    $("#js-ohm-input, #js-unit-select, #js-error-select").on("change", function () {
+        convert();
+    });
+    $("#convert").on("click", function () {
+        convert();
     });
 
-    // 初期表示
-    showResistor(5, 5, 5, 7);
+
+    // 抵抗の初期表示  330Ω±5%(橙橙茶金)
+    $("#js-ohm-input").val("330");
+    $("#js-unit-select").val("0");
+    $("#js-error-select").val("G");
+    convert();
 });
 
 
-// 抵抗の色帯を表示
-var showResistor = function (colorNo_1, colorNo_2, colorNo_3, colorNo_4) {
-    $(".colors:eq(1) > .color-" + colorNo_1).click();
-    $(".colors:eq(2) > .color-" + colorNo_2).click();
-    $(".colors:eq(3) > .color-" + colorNo_3).click();
-    $(".colors:eq(4) > .color-" + colorNo_4).click();
-};
+// 入力値から色帯を表示
+var convert = function () {
 
+    var ohmInput = $("#js-ohm-input").val();
+    var unitInput = $("#js-unit-select > option[value='" + $("#js-unit-select").val() + "'").text();
+    var errorInput = $("#js-error-select").val();
+
+    var colorNo_1 = convColorNo_1(ohmInput, unitInput);
+    var colorNo_2 = convColorNo_2(ohmInput, unitInput);
+    var colorNo_3 = convColorNo_3(ohmInput, unitInput, colorNo_1, colorNo_2);
+    var colorNo_4 = errorInput;
+
+    console.log(colorNo_1 + ":" + colorNo_2 + ":" + colorNo_3 + ":" + colorNo_4);
+
+    // 抵抗の色帯を表示
+    $(".colors:eq(0) > .color-" + colorNo_1).click();
+    $(".colors:eq(1) > .color-" + colorNo_2).click();
+    $(".colors:eq(2) > .color-" + colorNo_3).click();
+    $(".colors:eq(3) > .color-" + colorNo_4).click();
+};
 
 // 抵抗値を算出
 var convOhm = function (colorNo_1, colorNo_2, colorNo_3) {
@@ -124,7 +122,7 @@ var ohmString = function (ohm) {
 // 抵抗値誤差を算出
 var ohmError = function (colorNo_4) {
 
-    var ohmError = $(".colors:eq(4) > .color-" + colorNo_4).data("error-pct");
+    var ohmError = $(".colors:eq(3) > .color-" + colorNo_4).data("error-pct");
 
     return ohmError / 100;
 };
@@ -139,8 +137,6 @@ var ohmErrorString = function (ohmError) {
 
 
 var unitValue = function (unit) {
-
-    console.log("Unit:" + unit);
 
     var value;
     switch (unit.replace("Ω", "")) {
@@ -174,14 +170,30 @@ var convColorNo_2 = function (ohm, unit) {
     return ohmString.substr(1, 1);
 }
 
-var convColorNo_3 = function (ohm, unit) {
+var convColorNo_3 = function (ohm, unit, color1, color2) {
 
     var ohmValue = ohm * unitValue(unit);
-    var pow = 0;
-    if (String(ohmValue).length <= 2) {
-        pow = 0;
-    } else if (String(ohmValue).length > 2) {
-        pow = String(ohmValue).length - 2;
+
+    var pow;
+    for (var i = 9; i >= -2; i--) {
+        var color3;
+        switch (i) {
+            case -1:
+                color3 = "G";
+                break;
+            case -2:
+                color3 = "S";
+                break;
+            default:
+                color3 = String(i);
+                break;
+        }
+        //console.log("convColorNo_3A:" + convOhm(color1, color2, color3));
+        if (ohmValue == convOhm(color1, color2, color3)) {
+            pow = color3;
+            //console.log("convColorNo_3A:pow=" + pow);
+            break;
+        }
     }
 
     return pow;

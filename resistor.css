@@ -29,22 +29,19 @@ li {
     z-index: 9999;
 }
 
-#ohm {
-    position: absolute;
-    width: 100%;
-    top: 100px;     /* 20px * 5個(帯の縦位置中央) */
-}
-
 .resistor.color-0 {
     background-color: Black;
+    color: White;
 }
 
 .resistor.color-1 {
     background-color: Brown;
+    color: White;
 }
 
 .resistor.color-2 {
     background-color: Red;
+    color: White;
 }
 
 .resistor.color-3 {
@@ -57,18 +54,22 @@ li {
 
 .resistor.color-5 {
     background-color: Green;
+    color: White;
 }
 
 .resistor.color-6 {
     background-color: Blue;
+    color: White;
 }
 
 .resistor.color-7 {
     background-color: Purple;
+    color: White;
 }
 
 .resistor.color-8 {
     background-color: Gray;
+    color: White;
 }
 
 .resistor.color-9 {
@@ -85,4 +86,5 @@ li {
 
 .resistor.color-N {
     border: dotted 1px Black;
+    color: Gray;
 }
