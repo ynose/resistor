@@ -50,7 +50,7 @@ $(document).ready(function(){
 var convert = function () {
 
     var ohmInput = $("#js-ohm-input").val();
-    var unitInput = $("#js-unit-select > option[value='" + $("#js-unit-select").val() + "'").text();
+    var unitInput = $("#js-unit-select > option[value='" + $("#js-unit-select").val() + "']").text();
     var errorInput = $("#js-error-select").val();
 
     var colorNo_1 = convColorNo_1(ohmInput, unitInput);
