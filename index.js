@@ -23,9 +23,7 @@ $(document).ready(function(){
         var colorNo_3 = $("#js-color-no-3").text(); // ３帯目（乗数）
         var colorNo_4 = $("#js-color-no-4").text(); // ４帯目（誤差）
         var ohmStr = ohmString(convOhm(colorNo_1, colorNo_2, colorNo_3));
-        // var errStr = ohmErrorString($(".colors:eq(3) > .color-" + colorNo_4).data("error-pct") / 100);
         var errStr = "±" + $(".colors:eq(3) > .color-" + colorNo_4).data("error-pct") + "%";
-        var ohmErrorString = "±" + (ohmError * 100) + "%"
 
         $("#ohm").text(ohmStr + " Ω" + " " + errStr);
     });
@@ -116,23 +114,6 @@ var ohmString = function (ohm) {
     }
 
     return String(ohmString);
-};
-
-
-// 抵抗値誤差を算出
-var ohmError = function (colorNo_4) {
-
-    var ohmError = $(".colors:eq(3) > .color-" + colorNo_4).data("error-pct");
-
-    return ohmError / 100;
-};
-
-// 抵抗値誤差を表示用単位に変換
-var ohmErrorString = function (ohmError) {
-
-    var ohmErrorString = "±" + (ohmError * 100) + "%"
-
-    return ohmErrorString;
 };
 
 
