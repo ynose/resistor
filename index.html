@@ -51,32 +51,84 @@
     <div class="tab-content">
         <!-- Immediate -->
         <div role="tabpanel" class="tab-pane active" id="immediate">
+            
+            <!-- オームの法則 -->
             <div class="row">
                 <div class="col-xs-12">
-                    <!-- 抵抗値を入力 -->
-                    <input id="js-ohm-input" size="4"></input>
-                    <select id="js-unit-select">
-                        <option value="0">Ω</option>
-                        <option value="1">KΩ</option>
-                        <option value="2">MΩ</option>
-                    </select>
-                    <!-- 誤差を入力 -->
-                    <select id="js-error-select">
-                        <option value="1">±1%</option>
-                        <option value="2">±2%</option>
-                        <option value="3">±0.05%</option>
-                        <option value="5">±0.5%</option>
-                        <option value="6">±0.25%</option>
-                        <option value="7">±0.1%</option>
-                        <option value="G">±5%</option>
-                        <option value="S">±10%</option>
-                        <option value="N">±20%</option>
-                    </select>
-                    <button id="convert">OK</button>
-                    <!-- 抵抗値を表示 -->
-                    <span id="ohm"></span>
+                    <div class="form-horizontal">
+                    V (電圧V) = R (抵抗Ω) * I (電流A)
+                        <div class="form-group">
+                            <div class="col-xs-3">
+                                <div class="input-gorup">
+                                    <input type="number" id="js-ohm-v" class="form-control input-lg" size="4" placeholder="V (電圧V)"></input>
+                                    <div class="input-group-btn">
+                                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><span class="caret"></span></button>
+                                        <ul class="dropdown-menu dropdown-menu-right" role="menu">
+                                            <li><a href="#">1.5V</a></li>
+                                            <li class="divider"></li>
+                                            <li><a href="#">3.3V</a></li>
+                                            <li><a href="#">5V</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-1">
+                                =
+                            </div>
+                            <div class="col-xs-3">
+                                <input type="number" id="js-ohm-r" class="form-control input-lg" size="4" placeholder="R (抵抗Ω)"></input>
+                            </div>
+                            <div class="col-xs-1">
+                                ×
+                            </div>
+                            <div class="col-xs-3">
+                                <input type="number" id="js-ohm-i" class="form-control input-lg" size="4" placeholder="I (電流A)"></input>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
+          
+            
+            <!-- 抵抗値を入力 -->
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="form-horizontal">
+                        <div class="form-group">
+                            <div class="col-xs-12 col-sm-3">
+                                <input type="number" id="js-ohm-input" class="form-control input-lg" size="4"></input>
+                            </div>
+                            <div class="col-xs-12 col-sm-3">
+                                <select id="js-unit-select" class="form-control input-lg">
+                                    <option value="0">Ω</option>
+                                    <option value="1">KΩ</option>
+                                    <option value="2">MΩ</option>
+                                </select>
+                                </div>
+                            <!-- 誤差を入力 -->
+                            <div class="col-xs-12 col-sm-3">
+                                <select id="js-error-select" class="form-control input-lg">
+                                    <option value="1">±1%</option>
+                                    <option value="2">±2%</option>
+                                    <option value="3">±0.05%</option>
+                                    <option value="5">±0.5%</option>
+                                    <option value="6">±0.25%</option>
+                                    <option value="7">±0.1%</option>
+                                    <option value="G">±5%</option>
+                                    <option value="S">±10%</option>
+                                    <option value="N">±20%</option>
+                                </select>
+                            </div>
+                            <!-- <button id="convert">OK</button> -->
+                            <!-- 抵抗値を表示 -->
+                            <div class="col-xs-12 col-sm-3">
+                                <span id="ohm" class="form-control-static"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
             <div class="row">
                 <!-- 色帯１ -->
                 <div class="col-xs-3 js-color-group">
