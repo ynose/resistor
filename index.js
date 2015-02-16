@@ -1,5 +1,33 @@
 $(document).ready(function(){
 
+    // オームの法則
+    $("#js-ohm-v, #js-ohm-r, #js-ohm-i").on("change", function() {
+        var v = $("#js-ohm-v").val();
+        var r = $("#js-ohm-r").val();
+        var i = $("#js-ohm-i").val();
+
+        console.log(v + " = " + r + " / " + i);
+
+        // V (電圧V) = R (抵抗Ω) * I (電流A)
+        if (v == "") {
+            v = r * i;
+        } else if (r == "") {
+            r = v / i;
+        } else if (i == "") {
+            i = v / r;
+        }
+
+        $("#js-ohm-v").val(v);
+        $("#js-ohm-r").val(r);
+        $("#js-ohm-i").val(i);
+        
+    });
+
+    $("#js-ohm-v-select").on("click", "a", function() {
+        $("#js-ohm-v").val($(this).data("value"));
+    });
+
+
     // 色帯の色のクリックイベント（１～４のすべての帯に対応）
     $(".colors").on("click", "div", function() {
 
