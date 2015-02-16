@@ -5,7 +5,7 @@ li {
 
 .color-outer {
     position: relative;
-    overflow: hidden;
+    overflow-y: hidden;
     height: 320px;  /* selector.top + 20px * (帯10個 + なし1個) */
     border: dotted 1px Gray;
 }
@@ -21,11 +21,19 @@ li {
     text-align: center;
 }
 
+#selector {
+    position: absolute;
+    width: 100%;
+    left: -1px;
+    top: 122px;     /* 20px * 5個(帯の縦位置中央) */
+    border: solid 2px Blue;
+    z-index: 9999;
+}
 .selector {
     position: absolute;
     width: 100%;
     top: 100px;     /* 20px * 5個(帯の縦位置中央) */
-    border: solid 2px Blue;
+    /* border: solid 2px Blue; */
     z-index: 9999;
 }
 

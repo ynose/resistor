@@ -51,37 +51,47 @@
     <div class="tab-content">
         <!-- Immediate -->
         <div role="tabpanel" class="tab-pane active" id="immediate">
+            <br>
             
             <!-- オームの法則 -->
             <div class="row">
                <!--  V (電圧V) = R (抵抗Ω) * I (電流A) -->
-                <div class="col-xs-3">
-                    <div class="input-group">
-                        <input type="text" id="js-ohm-v" class="form-control input-lg" placeholder="V (電圧V)">
-                        <div class="input-group-btn">
-                            <button type="button" class="btn btn-default dropdown-toggle input-lg" data-toggle="dropdown" aria-expanded="false"><span class="caret"></span></button>
-                            <ul id="js-ohm-v-select" class="dropdown-menu dropdown-menu-left" role="menu">
-                              <li><a href="#" data-value="1.5">1.5V</a></li>
-                              <li class="divider"></li>
-                              <li><a href="#" data-value="3.3">3.3V</a></li>
-                              <li><a href="#" data-value="5">5V</a></li>
-                            </ul>
-                        </div><!-- /btn-group -->
-                    </div><!-- /input-group -->
-                </div><!-- /.col-lg-6 -->
-                <div class="col-xs-1" style="width: 3em;">
-                    =
-                </div>
-                <div class="col-xs-3">
-                    <input type="number" id="js-ohm-r" class="form-control input-lg" size="4" placeholder="R (抵抗Ω)"></input>
-                </div>
-                <div class="col-xs-1" style="width: 3em;">
-                    ×
-                </div>
-                <div class="col-xs-3">
-                    <input type="number" id="js-ohm-i" class="form-control input-lg" size="4" placeholder="I (電流A)"></input>
+                <div class="form-inline">
+                    <div class="col-xs-3">
+                        <div class="input-group">
+                            <input type="text" id="js-ohm-v" class="form-control input-lg" placeholder="V 電圧">
+                            <div class="input-group-btn">
+                                <button type="button" class="btn btn-default dropdown-toggle input-lg" data-toggle="dropdown" aria-expanded="false">V<span class="caret"></span></button>
+                                <ul id="js-ohm-v-select" class="dropdown-menu dropdown-menu-left" role="menu">
+                                    <li><a href="#" data-value="1.5">1.5V</a></li>
+                                    <li class="divider"></li>
+                                    <li><a href="#" data-value="3.3">3.3V</a></li>
+                                    <li><a href="#" data-value="5">5V</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-1" style="padding: 0; width: 4px;">
+                        =
+                    </div>
+                    <div class="col-xs-3">
+                        <div class="input-group">
+                            <input type="number" id="js-ohm-r" class="form-control input-lg" size="4" placeholder="R 抵抗"></input>
+                            <div class="input-group-addon">Ω</div>
+                        </div>
+                    </div>
+                    <div class="col-xs-1" style="padding: 0; width: 4px;">
+                        ×
+                    </div>
+                    <div class="col-xs-3">
+                        <div class="input-group">
+                            <input type="number" id="js-ohm-i" class="form-control input-lg" size="4" placeholder="I 電流"></input>
+                            <div class="input-group-addon">A</div>
+                        </div>
+                    </div>
                 </div>
             </div>
+            <br>
             
             <!-- 抵抗値を入力 -->
             <div class="row">
@@ -122,7 +132,10 @@
                 </div>
             </div>
             
-            <div class="row">
+            <div class="row" style="padding-right: 0; margin-right: 0;">
+                <div class="col-xs-12">
+                    <div id="selector" class="resistor selector"></div>
+                </div>
                 <!-- 色帯１ -->
                 <div class="col-xs-3 js-color-group">
                     <div id="js-color-no-1" class="resistor js-color-no"></div>
