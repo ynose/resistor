@@ -24,8 +24,7 @@ li {
 #selector {
     position: absolute;
     width: 100%;
-    left: -1px;
-    top: 122px;     /* 20px * 5個(帯の縦位置中央) */
+    top: 121px;     /* 20px * 5個(帯の縦位置中央) */
     border: solid 2px Blue;
     z-index: 9999;
 }

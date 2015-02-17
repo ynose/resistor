@@ -55,38 +55,40 @@
             
             <!-- オームの法則 -->
             <div class="row">
-               <!--  V (電圧V) = R (抵抗Ω) * I (電流A) -->
-                <div class="form-inline">
-                    <div class="col-xs-3">
-                        <div class="input-group">
-                            <input type="text" id="js-ohm-v" class="form-control input-lg" placeholder="V 電圧">
-                            <div class="input-group-btn">
-                                <button type="button" class="btn btn-default dropdown-toggle input-lg" data-toggle="dropdown" aria-expanded="false">V<span class="caret"></span></button>
-                                <ul id="js-ohm-v-select" class="dropdown-menu dropdown-menu-left" role="menu">
-                                    <li><a href="#" data-value="1.5">1.5V</a></li>
-                                    <li class="divider"></li>
-                                    <li><a href="#" data-value="3.3">3.3V</a></li>
-                                    <li><a href="#" data-value="5">5V</a></li>
-                                </ul>
+                <div class="col-xs-12">
+                   <!--  V (電圧V) = R (抵抗Ω) * I (電流A) -->
+                    <div class="form-inline">
+                        <div class="col-xs-4" style="padding: 0; margin: 0;">
+                            <div class="input-group">
+                                <input type="text" id="js-ohm-v" class="form-control" placeholder="V 電圧">
+                                <div class="input-group-btn">
+                                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">V<span class="caret"></span></button>
+                                    <ul id="js-ohm-v-select" class="dropdown-menu dropdown-menu-left" role="menu">
+                                        <li><a href="#" data-value="1.5">1.5V</a></li>
+                                        <li class="divider"></li>
+                                        <li><a href="#" data-value="3.3">3.3V</a></li>
+                                        <li><a href="#" data-value="5">5V</a></li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-xs-1" style="padding: 0; width: 4px;">
-                        =
-                    </div>
-                    <div class="col-xs-3">
-                        <div class="input-group">
-                            <input type="number" id="js-ohm-r" class="form-control input-lg" size="4" placeholder="R 抵抗"></input>
-                            <div class="input-group-addon">Ω</div>
+                        <div class="col-xs-1 text-center" style="padding: 0; margin: 0;">
+                            =
                         </div>
-                    </div>
-                    <div class="col-xs-1" style="padding: 0; width: 4px;">
-                        ×
-                    </div>
-                    <div class="col-xs-3">
-                        <div class="input-group">
-                            <input type="number" id="js-ohm-i" class="form-control input-lg" size="4" placeholder="I 電流"></input>
-                            <div class="input-group-addon">A</div>
+                        <div class="col-xs-3" style="padding: 0; margin: 0;">
+                            <div class="input-group">
+                                <input type="number" id="js-ohm-r" class="form-control" size="4" placeholder="R 抵抗"></input>
+                                <div class="input-group-addon">Ω</div>
+                            </div>
+                        </div>
+                        <div class="col-xs-1 text-center" style="padding: 0; margin: 0;">
+                            ×
+                        </div>
+                        <div class="col-xs-3" style="padding: 0; margin: 0;">
+                            <div class="input-group">
+                                <input type="number" id="js-ohm-i" class="form-control" size="4" placeholder="I 電流"></input>
+                                <div class="input-group-addon">A</div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -96,123 +98,127 @@
             <!-- 抵抗値を入力 -->
             <div class="row">
                 <div class="col-xs-12">
-                    <div class="form-horizontal">
-                        <div class="form-group">
-                            <div class="col-xs-12 col-sm-3">
-                                <input type="number" id="js-ohm-input" class="form-control input-lg" size="4"></input>
-                            </div>
-                            <div class="col-xs-12 col-sm-3">
-                                <select id="js-unit-select" class="form-control input-lg">
-                                    <option value="0">Ω</option>
-                                    <option value="1">KΩ</option>
-                                    <option value="2">MΩ</option>
-                                </select>
-                                </div>
-                            <!-- 誤差を入力 -->
-                            <div class="col-xs-12 col-sm-3">
-                                <select id="js-error-select" class="form-control input-lg">
-                                    <option value="1">±1%</option>
-                                    <option value="2">±2%</option>
-                                    <option value="3">±0.05%</option>
-                                    <option value="5">±0.5%</option>
-                                    <option value="6">±0.25%</option>
-                                    <option value="7">±0.1%</option>
-                                    <option value="G">±5%</option>
-                                    <option value="S">±10%</option>
-                                    <option value="N">±20%</option>
-                                </select>
-                            </div>
-                            <!-- <button id="convert">OK</button> -->
-                            <!-- 抵抗値を表示 -->
-                            <div class="col-xs-12 col-sm-3">
-                                <span id="ohm" class="form-control-static"></span>
-                            </div>
+                    <div class="form-inline">
+                        <div class="col-xs-4" style="padding: 0; margin: 0;">
+                            <input type="number" id="js-ohm-input" class="form-control" size="4"></input>
                         </div>
+                        <div class="col-xs-1" style="padding: 0; margin: 0;">
+                        </div>
+                        <div class="col-xs-3" style="padding: 0; margin: 0;">
+                            <select id="js-unit-select" class="form-control">
+                                <option value="0">Ω</option>
+                                <option value="1">KΩ</option>
+                                <option value="2">MΩ</option>
+                            </select>
+                        </div>
+                        <div class="col-xs-1" style="padding: 0; margin: 0;">
+                        </div>
+                        <!-- 誤差を入力 -->
+                        <div class="col-xs-3" style="padding: 0; margin: 0;">
+                            <select id="js-error-select" class="form-control">
+                                <option value="1">±1%</option>
+                                <option value="2">±2%</option>
+                                <option value="3">±0.05%</option>
+                                <option value="5">±0.5%</option>
+                                <option value="6">±0.25%</option>
+                                <option value="7">±0.1%</option>
+                                <option value="G">±5%</option>
+                                <option value="S">±10%</option>
+                                <option value="N">±20%</option>
+                            </select>
+                        </div>
+                        <!-- <button id="convert">OK</button> -->
+                        <!-- 抵抗値を表示 -->
                     </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <span id="ohm" class="form-control-static"></span>
                 </div>
             </div>
             
             <div class="row" style="padding-right: 0; margin-right: 0;">
                 <div class="col-xs-12">
                     <div id="selector" class="resistor selector"></div>
-                </div>
-                <!-- 色帯１ -->
-                <div class="col-xs-3 js-color-group">
-                    <div id="js-color-no-1" class="resistor js-color-no"></div>
-                    <div class="color-outer">                   <!-- overflow: hidden; -->
-                        <div class="resistor selector"></div>   <!-- position: absolute; -->
-                        <div class="colors">
-                            <div class="resistor color-0" data-color-no="0">黒</div>
-                            <div class="resistor color-1" data-color-no="1">茶</div>
-                            <div class="resistor color-2" data-color-no="2">赤</div>
-                            <div class="resistor color-3" data-color-no="3">橙</div>
-                            <div class="resistor color-4" data-color-no="4">黄</div>
-                            <div class="resistor color-5" data-color-no="5">緑</div>
-                            <div class="resistor color-6" data-color-no="6">青</div>
-                            <div class="resistor color-7" data-color-no="7">紫</div>
-                            <div class="resistor color-8" data-color-no="8">灰</div>
-                            <div class="resistor color-9" data-color-no="9">白</div>
-                            <div class="resistor color-N" data-color-no="N">無色</div>
+                    <!-- 色帯１ -->
+                    <div class="col-xs-3 js-color-group">
+                        <div id="js-color-no-1" class="resistor js-color-no"></div>
+                        <div class="color-outer">                   <!-- overflow: hidden; -->
+                            <div class="resistor selector"></div>   <!-- position: absolute; -->
+                            <div class="colors">
+                                <div class="resistor color-0" data-color-no="0">黒</div>
+                                <div class="resistor color-1" data-color-no="1">茶</div>
+                                <div class="resistor color-2" data-color-no="2">赤</div>
+                                <div class="resistor color-3" data-color-no="3">橙</div>
+                                <div class="resistor color-4" data-color-no="4">黄</div>
+                                <div class="resistor color-5" data-color-no="5">緑</div>
+                                <div class="resistor color-6" data-color-no="6">青</div>
+                                <div class="resistor color-7" data-color-no="7">紫</div>
+                                <div class="resistor color-8" data-color-no="8">灰</div>
+                                <div class="resistor color-9" data-color-no="9">白</div>
+                                <div class="resistor color-N" data-color-no="N">無色</div>
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <!-- 色帯２ -->
-                <div class="col-xs-3 js-color-group">
-                    <div id="js-color-no-2" class="resistor js-color-no"></div>
-                    <div class="color-outer">                   <!-- overflow: hidden; -->
-                        <div class="resistor selector"></div>   <!-- position: absolute; -->
-                        <div class="colors">
-                            <div class="resistor color-0" data-color-no="0">黒</div>
-                            <div class="resistor color-1" data-color-no="1">茶</div>
-                            <div class="resistor color-2" data-color-no="2">赤</div>
-                            <div class="resistor color-3" data-color-no="3">橙</div>
-                            <div class="resistor color-4" data-color-no="4">黄</div>
-                            <div class="resistor color-5" data-color-no="5">緑</div>
-                            <div class="resistor color-6" data-color-no="6">青</div>
-                            <div class="resistor color-7" data-color-no="7">紫</div>
-                            <div class="resistor color-8" data-color-no="8">灰</div>
-                            <div class="resistor color-9" data-color-no="9">白</div>
-                            <div class="resistor color-N" data-color-no="N">無色</div>
+                    <!-- 色帯２ -->
+                    <div class="col-xs-3 js-color-group">
+                        <div id="js-color-no-2" class="resistor js-color-no"></div>
+                        <div class="color-outer">                   <!-- overflow: hidden; -->
+                            <div class="resistor selector"></div>   <!-- position: absolute; -->
+                            <div class="colors">
+                                <div class="resistor color-0" data-color-no="0">黒</div>
+                                <div class="resistor color-1" data-color-no="1">茶</div>
+                                <div class="resistor color-2" data-color-no="2">赤</div>
+                                <div class="resistor color-3" data-color-no="3">橙</div>
+                                <div class="resistor color-4" data-color-no="4">黄</div>
+                                <div class="resistor color-5" data-color-no="5">緑</div>
+                                <div class="resistor color-6" data-color-no="6">青</div>
+                                <div class="resistor color-7" data-color-no="7">紫</div>
+                                <div class="resistor color-8" data-color-no="8">灰</div>
+                                <div class="resistor color-9" data-color-no="9">白</div>
+                                <div class="resistor color-N" data-color-no="N">無色</div>
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <!-- 色帯３ 乗数 -->
-                <div class="col-xs-3 js-color-group">
-                    <div id="js-color-no-3" class="resistor js-color-no"></div>
-                    <div class="color-outer">                   <!-- overflow: hidden; -->
-                        <div class="resistor selector"></div>   <!-- position: absolute; -->
-                        <div class="colors">
-                            <div class="resistor color-0" data-color-no="0">黒</div>
-                            <div class="resistor color-1" data-color-no="1">茶</div>
-                            <div class="resistor color-2" data-color-no="2">赤</div>
-                            <div class="resistor color-3" data-color-no="3">橙</div>
-                            <div class="resistor color-4" data-color-no="4">黄</div>
-                            <div class="resistor color-5" data-color-no="5">緑</div>
-                            <div class="resistor color-6" data-color-no="6">青</div>
-                            <div class="resistor color-G" data-color-no="G">金</div>
-                            <div class="resistor color-S" data-color-no="S">銀</div>
-                            <div class="resistor color-N" data-color-no="N">無色</div>
+                    <!-- 色帯３ 乗数 -->
+                    <div class="col-xs-3 js-color-group">
+                        <div id="js-color-no-3" class="resistor js-color-no"></div>
+                        <div class="color-outer">                   <!-- overflow: hidden; -->
+                            <div class="resistor selector"></div>   <!-- position: absolute; -->
+                            <div class="colors">
+                                <div class="resistor color-0" data-color-no="0">黒</div>
+                                <div class="resistor color-1" data-color-no="1">茶</div>
+                                <div class="resistor color-2" data-color-no="2">赤</div>
+                                <div class="resistor color-3" data-color-no="3">橙</div>
+                                <div class="resistor color-4" data-color-no="4">黄</div>
+                                <div class="resistor color-5" data-color-no="5">緑</div>
+                                <div class="resistor color-6" data-color-no="6">青</div>
+                                <div class="resistor color-G" data-color-no="G">金</div>
+                                <div class="resistor color-S" data-color-no="S">銀</div>
+                                <div class="resistor color-N" data-color-no="N">無色</div>
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <!-- 色帯４　誤差 -->
-                <div class="col-xs-3 js-color-group">
-                    <div id="js-color-no-4" class="resistor js-color-no"></div>
-                    <div class="color-outer">                   <!-- overflow: hidden; -->
-                        <div class="resistor selector"></div>   <!-- position: absolute; -->
-                        <div class="colors">
-                            <div class="resistor color-1" data-color-no="1" data-error-pct="1">茶</div>
-                            <div class="resistor color-2" data-color-no="2" data-error-pct="2">赤</div>
-                            <div class="resistor color-3" data-color-no="3" data-error-pct="0.05">橙</div>
-                            <div class="resistor color-5" data-color-no="5" data-error-pct="0.5">緑</div>
-                            <div class="resistor color-6" data-color-no="6" data-error-pct="0.25">青</div>
-                            <div class="resistor color-7" data-color-no="7" data-error-pct="0.1">紫</div>
-                            <div class="resistor color-G" data-color-no="G" data-error-pct="5">金</div>
-                            <div class="resistor color-S" data-color-no="S" data-error-pct="10">銀</div>
-                            <div class="resistor color-N" data-color-no="N" data-error-pct="20">無色</div>
+                    <!-- 色帯４　誤差 -->
+                    <div class="col-xs-3 js-color-group">
+                        <div id="js-color-no-4" class="resistor js-color-no"></div>
+                        <div class="color-outer">                   <!-- overflow: hidden; -->
+                            <div class="resistor selector"></div>   <!-- position: absolute; -->
+                            <div class="colors">
+                                <div class="resistor color-1" data-color-no="1" data-error-pct="1">茶</div>
+                                <div class="resistor color-2" data-color-no="2" data-error-pct="2">赤</div>
+                                <div class="resistor color-3" data-color-no="3" data-error-pct="0.05">橙</div>
+                                <div class="resistor color-5" data-color-no="5" data-error-pct="0.5">緑</div>
+                                <div class="resistor color-6" data-color-no="6" data-error-pct="0.25">青</div>
+                                <div class="resistor color-7" data-color-no="7" data-error-pct="0.1">紫</div>
+                                <div class="resistor color-G" data-color-no="G" data-error-pct="5">金</div>
+                                <div class="resistor color-S" data-color-no="S" data-error-pct="10">銀</div>
+                                <div class="resistor color-N" data-color-no="N" data-error-pct="20">無色</div>
+                            </div>
                         </div>
                     </div>
                 </div>
